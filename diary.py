@@ -1,12 +1,12 @@
 question = ("how", "why", "what", "could", "should", "can")
-text = ""
+text = []
 while True:
      phrase = input("Say something: ").lower()
      if phrase == "\\end":
-          print(text)
+          print(" ".join(text))
           break
      if phrase.startswith(question):
           phrase += "?"
      else:
           phrase += "."
-     text += f" {phrase.capitalize()}"
+     text.append(phrase.capitalize())
