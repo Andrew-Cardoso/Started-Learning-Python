@@ -184,3 +184,42 @@ usernames = [ "Andrew", "Sussu", "Cardoso", "Akz" ]
 # while datetime.datetime.now() < datetime.datetime(2090, 8, 20, 19, 30, 20):
 #     print(datetime.datetime.now())
 #     print("It's not yet 19:30:20 of 2090.8.20")
+
+
+# temps = [203, 300, 243, 286]
+# print(temps)
+# print([temp / 10 for temp in temps])
+
+temps = [203, 300, 243, 286, -9999, 457.9]
+# print([temp / 10 for temp in temps if temp != -9999])
+
+#list comprehension
+def get_ints(items):
+    return [item for item in items if isinstance(item, int)]
+def get_values(items):
+    return [item if isinstance(item, (int, float)) else 0 for item in items ]
+def get_sum(lst):
+    return sum( [ float( n ) for n in lst ] )
+def join_str(a, b):
+    return a+b
+    #return "".join([a,b])
+def as_many_args_as_needed(*args):
+    # args is a tuple
+    return sum(args)
+# print(as_many_args_as_needed(3,4,6,3,5))
+
+def default_arg_values(a = 4, b = 9): #default values
+    return a+b
+# print(default_arg_values(a = 9, b = 3)) # named arguments - position doest matter
+
+def to_upper_sorted(*args):
+    return sorted([ arg.upper() for arg in args ])
+# print(to_upper_sorted("a", "c", "r", "ab", "z", "t", "e"))
+
+def as_many_args_as_needed_dict(**kwargs):
+    return kwargs
+# print(as_many_args_as_needed_dict(a = 4, b = 6, c = [1,3,5]))
+
+def find_winner(**kwargs):
+    return max(kwargs, key = kwargs.get)
+# print(find_winner(Andy = 17, Marry = 19, Sim = 45, Kae = 34))
