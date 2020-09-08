@@ -54,7 +54,7 @@ with open("fruits.txt", "a+") as fruits_file:
 while True:
      if os.path.exists("stars.csv"):
           stars = pandas.read_csv("stars.csv")
-          # print(stars.mean()) # all colunms
+          # print(stars.mean()) # all columns
           print(stars.mean()["Burger King"])
      else:
           open("stars.csv", "w").write("McDonald's,Burger King,Bob's\n4,5,3\n5,4.5,3.5\n5,5,3\n3.5,5,4\n4,4,4")
